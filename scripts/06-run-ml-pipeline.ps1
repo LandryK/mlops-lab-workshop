@@ -12,19 +12,19 @@ if (-not $pythonCmd) {
     exit 1
 }
 
-# Create virtual environment if not exists
-if (-not (Test-Path "venv")) {
-    Write-Host "Creating virtual environment..." -ForegroundColor Yellow
-    python -m venv venv
-}
+# # Create virtual environment if not exists
+# if (-not (Test-Path "venv")) {
+#     Write-Host "Creating virtual environment..." -ForegroundColor Yellow
+#     python -m venv venv
+# }
 
-# Activate virtual environment
-Write-Host "Activating virtual environment..." -ForegroundColor Yellow
-& .\venv\Scripts\Activate.ps1
+# # Activate virtual environment
+# Write-Host "Activating virtual environment..." -ForegroundColor Yellow
+# & .\venv\Scripts\Activate.ps1
 
-# Install dependencies
-Write-Host "Installing dependencies..." -ForegroundColor Yellow
-pip install pandas numpy scikit-learn mlflow boto3 pyarrow --quiet
+# # Install dependencies
+# Write-Host "Installing dependencies..." -ForegroundColor Yellow
+# pip install pandas numpy scikit-learn mlflow boto3 pyarrow --quiet
 
 # Set environment variables for local development
 $env:MINIO_ENDPOINT = "http://localhost:9000"
